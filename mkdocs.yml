@@ -1,0 +1,12 @@
+site_name: Loadbalancer Docs
+site_url: https://loadbalancer-docs.netlify.app/
+site_description: Loadbalancer Docs
+site_author: Mary Mbaoma
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Logic: logic.md
+  - Preview: websites.md
+  - Cron Job: cron.md
+theme: readthedocs
+

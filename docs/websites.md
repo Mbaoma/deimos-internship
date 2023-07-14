@@ -18,7 +18,7 @@ The generated HTML content is then served to clients when they access the websit
 
 ## Loadbalancer
 
-The least_conn directive is used to specify the load balancing algorithm for distributing requests among the backend servers. With ```least_conn```, Nginx will distribute the incoming requests to the backend server with the least number of active connections. This helps to evenly distribute the load across the servers and improve performance.
+Round-robin is a load-balancing algorithm used to distribute incoming requests across multiple servers in a sequential manner. It ensures that each server in the pool receives an equal share of the incoming traffic.
 
 <img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/8e75f6b4-8ebd-4fd3-923b-36d338fe0f06">
 

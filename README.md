@@ -151,9 +151,9 @@ $ sudo  cat /var/log/nginx/error.log
 ```
 
 ## Loadbalancer
+<img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/8e75f6b4-8ebd-4fd3-923b-36d338fe0f06">
 
-<img width="1568" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/6d1f732f-0742-4e6a-b384-90e474ca7f4b">
+<img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/d392ab67-3198-46e0-bb7f-c5ae8c9f9772">
 
-<img width="1514" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/75ee02a1-6fe0-4785-ba68-38674d22006b">
+*[http://192.168.1.152/](http://192.168.1.152/)*
 
-*[http://localhost:80/](http://localhost:80)*

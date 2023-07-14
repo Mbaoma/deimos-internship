@@ -109,9 +109,8 @@ sudo ln -s "$CONFIG_FILE" /etc/nginx/sites-enabled/default
 load_balancing_config='
 http {
     upstream backend {
-        least_conn;
-        server localhost:8000;
-        server localhost:8080;
+        server 192.168.1.120:80;
+        server 192.168.1.152:8000;
     }
 
     server {
@@ -149,4 +148,6 @@ sudo nginx -t
 sudo systemctl daemon-reload
 # Restart Nginx for the changes to take effect
 sudo systemctl restart nginx
+
+
 

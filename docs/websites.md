@@ -10,19 +10,18 @@ Inside ```main.js```, the website's logic is implemented using JavaScript. The p
 
 The generated HTML content is then served to clients when they access the website's URL. The Nginx server acts as a reverse proxy, forwarding the incoming requests to the Node.js server running on port ```8000```.
 
-- The websites are accessible via ```http://localhost:8080/``` and ```http://localhost:8000/```
+- The websites are accessible via ```http://http://192.168.1.120:8080/``` and ```http://192.168.1.152:8000/```
 
 <img width="1568" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/4ec015f6-7a68-4444-b23c-cc0ab92cb5e6">
 
-<img width="1568" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/f4c7eae4-4f59-461d-8d37-ad42bb57e57f">
-
+<img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/dafb9a27-be5e-481e-bc56-1fcbc944136b">
 
 ## Loadbalancer
 
 The least_conn directive is used to specify the load balancing algorithm for distributing requests among the backend servers. With ```least_conn```, Nginx will distribute the incoming requests to the backend server with the least number of active connections. This helps to evenly distribute the load across the servers and improve performance.
 
-<img width="1568" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/6d1f732f-0742-4e6a-b384-90e474ca7f4b">
+<img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/8e75f6b4-8ebd-4fd3-923b-36d338fe0f06">
 
+<img width="1572" alt="image" src="https://github.com/Mbaoma/loadbalancing-local-vms/assets/49791498/d392ab67-3198-46e0-bb7f-c5ae8c9f9772">
 
-
-*[http://localhost:80/](http://localhost:80)*
+*[http://192.168.1.152/](http://192.168.1.152/)*

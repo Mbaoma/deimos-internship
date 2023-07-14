@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "your_box_name"
   config.vm.network "forwarded_port", guest: 8000, host: 8000
-  config.vm.network "forwarded_port", guest: 80, host: 80
 end
 ```
 
@@ -18,15 +17,17 @@ $ vagrant reload
 Vagrant.configure("2") do |config|
   config.vm.box = "your_box_name"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 80, host: 80
 end
 ```
+
+**Note**
+In both VagrantFiles, Uncomment the ```  config.vm.network "public_network"``` and pick ```1``` which is ```WiFi```, this is to allow your VMs be on the same network.
 
 Then run,
 ```bash
 $ vagrant reload
 ```
-The snippet specifies forwarding ports 80 and 8081 from the guest machine to ports 80 (loadbalancing), 8080 and 8000 (for the individual websites) on the host machines. This means that any traffic coming to ports 80, 8080 and 8000 on your host machine will be redirected to ports80, 8080 and 8000  respectively on the guest machine.
+The snippet specifies forwarding ports 8000 & 8080 from the guest machine to ports 80 (loadbalancing), 8080 and 8000 (for the individual websites) on the host machines. This means that any traffic coming to ports 8080 and 8000 on your host machine will be redirected to ports 8080 and 8000  respectively on the guest machine - allowing the browser to render the websites.
 
 This enables access to the websites URL from a browser
 

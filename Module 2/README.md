@@ -39,4 +39,5 @@ App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 
 Database Visualization - *[http://localhost:80](http://localhost:80)*
 
-[Article]()
+[Article](https://omarrrz-lounge.hashnode.dev/efficient-containerization)
+

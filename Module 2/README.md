@@ -11,36 +11,34 @@
 - Use docker-compose to create the application and database backend
 - Data to persist on container restart
 
-In order to dockerize a PHP form application and link it to a MySQL database, there are several steps you would need to take. This guide will also include the use of Docker Compose for easier orchestration of multi-container applications, data persistence, and Apache as the web server.
-
-## Step 1: Create the PHP Application with a MySQL backend
-[Guide](https://dev.to/satellitebots/create-a-web-server-and-save-form-data-into-mysql-database-using-php-beginners-guide-fah)
-
-- Set up a Linux machine using either a VirtualBox or cloud provider. Using a VirtualBox (MacOs):
+## Running the docker container (using docker-compose)
+- First, run the migration
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$ brew install --cask virtualbox
-$ brew install --cask vagrant
-$ brew install --cask vagrant-manager
-$ vagrant init ubuntu/xenial64
-$ vagrant up
-$ vagrant ssh
+
 ```
 
-- Enable port forwarding in VagrantBox, by editing the ```Vagrantfile``` located in the directory your box was created. 
+- Next, start the container,
 ```bash
-Vagrant.configure("2") do |config|
-  config.vm.box = "your_box_name"
-  config.vm.network "forwarded_port", guest: 80, host: 80
-  config.vm.network "public_network"
-end
+$ docker-compose up --build
 ```
 
-- Then run,
-```bash
-$ vagrant reload
-```
+## Running the docker container (without docker-compose)
+- Pull the MySQL image
+- Create the docker image (php)
+- Log into the MySQL container and run the migration
+  
 
-- When prompted,
+## The app (in pictures)
 
-<img width="565" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/6c590585-6cac-490d-99df-147453baf732">
+<img width="751" alt="Screenshot 2023-07-23 at 17 00 36" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/41a0c0f6-4c62-4552-8e37-4265956f5163">
+
+App - *http://localhost:8080/index.html*
+
+<img width="920" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/93b7c82d-1557-4a44-8ef3-ec06bb9ae2ca">
+
+*redirection*
+
+<img width="1150" alt="Screenshot 2023-07-23 at 17 07 08" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/7d8c7aa7-00af-402c-8a69-9576b75ea37c">
+Database Visualization - *http://localhost:80*
+
+[Article]()

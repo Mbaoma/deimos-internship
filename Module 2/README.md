@@ -12,12 +12,7 @@
 - Data to persist on container restart
 
 ## Running the docker container (using docker-compose)
-- First, run the migration
-```bash
-
-```
-
-- Next, start the container,
+- Start the container,
 ```bash
 $ docker-compose up --build
 ```

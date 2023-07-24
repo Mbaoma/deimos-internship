@@ -25,7 +25,7 @@ $ docker-compose up --build
 
 ## The app (in pictures)
 
-<img width="751" alt="Screenshot 2023-07-23 at 17 00 36" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/41a0c0f6-4c62-4552-8e37-4265956f5163">
+<img width="1009" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/baa1ca77-eb32-40b5-9a27-ceba38993c6b">
 
 App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 

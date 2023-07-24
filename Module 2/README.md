@@ -32,13 +32,16 @@ $ docker-compose up --build
 
 <img width="751" alt="Screenshot 2023-07-23 at 17 00 36" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/41a0c0f6-4c62-4552-8e37-4265956f5163">
 
-App - *http://localhost:8080/index.html*
+App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 
 <img width="920" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/93b7c82d-1557-4a44-8ef3-ec06bb9ae2ca">
 
 *redirection*
 
 <img width="1150" alt="Screenshot 2023-07-23 at 17 07 08" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/7d8c7aa7-00af-402c-8a69-9576b75ea37c">
-Database Visualization - *http://localhost:80*
+
+<img width="1097" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/0c53c8c7-4239-42ba-bf52-632a4c9b7d15">
+
+Database Visualization - *[http://localhost:80](http://localhost:80)*
 
 [Article]()

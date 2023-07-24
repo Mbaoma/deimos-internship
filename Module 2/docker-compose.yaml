@@ -33,6 +33,7 @@ services:
       retries: 10
     volumes:
       - db_data:/var/lib/mysql
+      - ./main.sql:/docker-entrypoint-initdb.d/main.sql #run the main.sql script upon startup
 
   phpmyadmin:
     image: phpmyadmin:latest

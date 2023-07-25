@@ -18,6 +18,8 @@ $ docker-compose up --build
 ```
 
 ## Running the docker container (without docker-compose)
+**Note**: Ensure the value of ```$host```in ```index.php``` file, tallies with the value of <mysql-container-name> 
+
 - Pull a mysql and phpMyAdmin images
 ```bash
 $ docker pull mysql
@@ -40,7 +42,7 @@ In this command, the ```--link``` option connects the PHP container to the MySQL
 
 - PhpMyAdmin
 ```bash
-$ docker run --name <phpMyAdmin-container-name> --link <mysql-container-name>:db -p 80:80 -d phpmyadmin/phpmyadmin
+$ docker run --name <phpMyAdmin-container-name> --link c:db -p 80:80 -d phpmyadmin/phpmyadmin
 ```
 The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* container.
 

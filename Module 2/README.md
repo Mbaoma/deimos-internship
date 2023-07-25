@@ -74,6 +74,7 @@ Database Visualization - *[http://localhost:80](http://localhost:80)*
 ```bash
 $ docker push <docker-hub-repo-name>/<image-name> 
 ```
+<img width="1521" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/3204eb4c-054e-489d-a999-b80e3cecd37e">
 
 [Article](https://omarrrz-lounge.hashnode.dev/efficient-containerization)
 

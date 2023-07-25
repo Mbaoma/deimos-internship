@@ -33,11 +33,9 @@ $ docker run --name my-mysql -v ./main.sql:/docker-entrypoint-initdb.d/main.sql 
 - PHP
 ```bash 
 $ docker build -t mbaoma/my-php .
-$ docker run -d --name my-php --link my-mysql:mysql -p 8080:80 mbaoma/my-php
+$ docker run -d --name my-php --link my-mysql-2:mysql -p 8080:80 -e MYSQL_ROOT_PASSWORD=my-secret-pw -v .:/var/www/html mbaoma/my-php 
 ```
--v /path/to/your/php/files:/var/www/html
-
-In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container.
+In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container. The 
 
 - PhpMyAdmin
 ```bash
@@ -49,7 +47,11 @@ The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* c
 <img width="588" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a7ac4344-a196-4005-93d6-eb56c52f3335">
 App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 
+<img width="1521" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a06a570a-1c36-47b6-ba66-1c2033c289b9">
+*redirection*
 
+<img width="1521" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/c20db017-e859-48fc-8b47-5da739e7cc7f">
+Database Visualization - *[http://localhost:80](http://localhost:80)*
 
 ## The app (in pictures - docker compose)
 

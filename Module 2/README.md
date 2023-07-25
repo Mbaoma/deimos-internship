@@ -27,19 +27,20 @@ $ docker pull phpmyadmin
 - Start the containers
 MySQL
 ```bash
-$ docker run --name my-mysql -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
+$ $ docker run --name <mysql-container-name> -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
 ```
 
 - PHP
 ```bash 
-$ docker build -t mbaoma/my-php .
-$ docker run -d --name my-php --link my-mysql-2:mysql -p 8080:80 -e MYSQL_ROOT_PASSWORD=my-secret-pw -v .:/var/www/html mbaoma/my-php 
+$ docker build -t <docker-hub-repo-name>/<image-name> .
+$ docker run -d --name <php-app-container-name> --link <mysql-container-name>:mysql -p 8080:80 -e MYSQL_ROOT_PASSWORD=<value> -v .:/var/www/html <docker-hub-repo-name>/<image-name> 
+
 ```
 In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container. The 
 
 - PhpMyAdmin
 ```bash
-$ docker run --name my-phpmyadmin --link my-mysql:db -p 80:80 -d phpmyadmin/phpmyadmin
+$ docker run --name <phpMyAdmin-container-name> --link my-mysql:db -p 80:80 -d phpmyadmin/phpmyadmin
 ```
 The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* container.
 
@@ -68,6 +69,11 @@ App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 <img width="1097" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/0c53c8c7-4239-42ba-bf52-632a4c9b7d15">
 
 Database Visualization - *[http://localhost:80](http://localhost:80)*
+
+## Push Php Image to DockerHub
+```bash
+$ docker push <docker-hub-repo-name>/<image-name> 
+```
 
 [Article](https://omarrrz-lounge.hashnode.dev/efficient-containerization)
 

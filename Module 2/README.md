@@ -27,14 +27,17 @@ $ docker pull phpmyadmin
 - Start the containers
 MySQL
 ```bash
-$ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=test_db -d mysql:latest
+$ docker run --name my-mysql -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
 ```
 
 - PHP
 ```bash 
-$ docker run -d --name my-php --link my-mysql:mysql -v /path/to/your/php/files:/var/www/html -p 8080:80 php:apache
+$ docker build -t mbaoma/my-php .
+$ docker run -d --name my-php --link my-mysql:mysql -p 8080:80 mbaoma/my-php
 ```
-In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-v``` option mounts your PHP files in the Apache server's document root. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container.
+-v /path/to/your/php/files:/var/www/html
+
+In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container.
 
 - PhpMyAdmin
 ```bash
@@ -42,7 +45,13 @@ $ docker run --name my-phpmyadmin --link my-mysql:db -p 80:80 -d phpmyadmin/phpm
 ```
 The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* container.
 
-## The app (in pictures)
+## The app (in pictures - without docker compose)
+<img width="588" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a7ac4344-a196-4005-93d6-eb56c52f3335">
+App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
+
+
+
+## The app (in pictures - docker compose)
 
 <img width="1009" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/baa1ca77-eb32-40b5-9a27-ceba38993c6b">
 

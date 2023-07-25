@@ -27,7 +27,7 @@ $ docker pull phpmyadmin
 - Start the containers
 MySQL
 ```bash
-$ $ docker run --name <mysql-container-name> -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
+$ docker run --name <mysql-container-name> -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
 ```
 
 - PHP
@@ -40,7 +40,7 @@ In this command, the ```--link``` option connects the PHP container to the MySQL
 
 - PhpMyAdmin
 ```bash
-$ docker run --name <phpMyAdmin-container-name> --link my-mysql:db -p 80:80 -d phpmyadmin/phpmyadmin
+$ docker run --name <phpMyAdmin-container-name> --link <mysql-container-name>:db -p 80:80 -d phpmyadmin/phpmyadmin
 ```
 The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* container.
 

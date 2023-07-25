@@ -18,10 +18,29 @@ $ docker-compose up --build
 ```
 
 ## Running the docker container (without docker-compose)
-- Pull the MySQL image
-- Create the docker image (php)
-- Log into the MySQL container and run the migration
-  
+- Pull a mysql and phpMyAdmin images
+```bash
+$ docker pull mysql
+$ docker pull phpmyadmin
+```
+
+- Start the containers
+MySQL
+```bash
+$ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=test_db -d mysql:latest
+```
+
+- PHP
+```bash 
+$ docker run -d --name my-php --link my-mysql:mysql -v /path/to/your/php/files:/var/www/html -p 8080:80 php:apache
+```
+In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-v``` option mounts your PHP files in the Apache server's document root. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container.
+
+- PhpMyAdmin
+```bash
+$ docker run --name my-phpmyadmin --link my-mysql:db -p 80:80 -d phpmyadmin/phpmyadmin
+```
+The ```--link`` option here connects the *phpMyAdmin* container to the *MySQL* container.
 
 ## The app (in pictures)
 

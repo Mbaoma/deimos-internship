@@ -3,3 +3,4 @@ mysql_root_password.txt
 *.log
 .DS_Store
 .env
+.my.cnf

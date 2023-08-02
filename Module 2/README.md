@@ -12,6 +12,15 @@
 - Data to persist on container restart
 
 ## Running the docker container (using docker-compose)
+- Create a ```.env``` file
+```
+MYSQL_ROOT_PASSWORD=<value>
+MYSQL_PASSWORD=<value>
+DB_HOST=<value>
+MYSQL_DATABASE=<value>
+MYSQL_PORT=<value>
+MYSQL_USER=<value>
+```
 - Start the container,
 ```bash
 $ docker-compose up --build
@@ -24,18 +33,19 @@ $ docker-compose up --build
 ```bash
 $ docker pull mysql
 $ docker pull phpmyadmin
+$ docker pull 
 ```
 
 - Start the containers
 MySQL
 ```bash
-$ docker run --name <mysql-container-name> -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e MYSQL_ROOT_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
+$ docker run --name <mysql-container-name> -v ./main.sql:/docker-entrypoint-initdb.d/main.sql  -e -e MYSQL_USER=<some-value> -e MYSQL_PASSWORD=<value> -e MYSQL_DATABASE=<value> -d mysql:latest
 ```
 
 - PHP
 ```bash 
 $ docker build -t <docker-hub-repo-name>/<image-name> .
-$ docker run -d --name <php-app-container-name> --link <mysql-container-name>:mysql -p 8080:80 -e MYSQL_ROOT_PASSWORD=<value> -v .:/var/www/html <docker-hub-repo-name>/<image-name> 
+$ docker run -d --name <php-app-container-name> --link <mysql-container-name>:mysql -p 8080:80 -e MYSQL_PASSWORD=<value> -v .:/var/www/html <docker-hub-repo-name>/<image-name> 
 
 ```
 In this command, the ```--link``` option connects the PHP container to the MySQL container. The ```-p``` option maps port ```8080``` on your host to port ```80``` on the container. The 
@@ -79,4 +89,3 @@ $ docker push <docker-hub-repo-name>/<image-name>
 <img width="1521" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/3204eb4c-054e-489d-a999-b80e3cecd37e">
 
 [Article](https://omarrrz-lounge.hashnode.dev/efficient-containerization)
-

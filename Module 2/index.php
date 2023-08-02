@@ -1,17 +1,17 @@
 <?php
 // without docker-compose   
-// $host = "my-mysql-2"; 
-// $db_name = getenv('MYSQL_DATABASE');
-// $username = getenv('MYSQL_USER');
-// $db_name = "test_db"; 
-// $username = "may";
-// $password = getenv('MYSQL_PASSWORD');
-
-// for docker-compose   
-$host = getenv('DB_HOST');
+$host = "mysql-c"; 
 $db_name = getenv('MYSQL_DATABASE');
 $username = getenv('MYSQL_USER');
+// $db_name = "test_db"; 
+// $username = "may";
 $password = getenv('MYSQL_PASSWORD');
+
+// for docker-compose   
+// $host = getenv('DB_HOST');
+// $db_name = getenv('MYSQL_DATABASE');
+// $username = getenv('MYSQL_USER');
+// $password = getenv('MYSQL_PASSWORD');
 
 try{
 $connection = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);

@@ -21,6 +21,7 @@ MYSQL_DATABASE=<value>
 MYSQL_PORT=<value>
 MYSQL_USER=<value>
 ```
+
 - Start the container,
 ```bash
 $ docker-compose up --build
@@ -33,7 +34,9 @@ $ docker-compose up --build
 ```bash
 $ docker pull mysql
 $ docker pull phpmyadmin
-$ docker pull 
+$ docker pull prom/mysqld-exporter
+$ docker pull prom/prometheus
+$ docker pull grafana/grafana
 ```
 
 - Start the containers
@@ -81,6 +84,10 @@ App - *[http://localhost:8080/index.html](http://localhost:8080/index.html)*
 <img width="1097" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/0c53c8c7-4239-42ba-bf52-632a4c9b7d15">
 
 Database Visualization - *[http://localhost:80](http://localhost:80)*
+
+Grafa Dashboard - *[http://localhost:3000/](http://localhost:3000/)
+
+<img width="1678" alt="Screenshot 2023-08-02 at 10 22 41" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a80129c8-b084-447a-a444-bfedfe39fe37">
 
 ## Push Php Image to DockerHub
 ```bash

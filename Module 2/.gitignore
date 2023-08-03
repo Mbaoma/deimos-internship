@@ -4,3 +4,4 @@ mysql_root_password.txt
 .DS_Store
 .env
 .my.cnf
+path_to_your_my_cnf_file

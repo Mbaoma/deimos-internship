@@ -11,6 +11,9 @@
 - Data to persist on container restart
 - Include monitoring (personal preference)
 
+## Architectural Diagram
+<img width="469" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a0c7af67-4f97-4890-975d-6cc254840236">
+
 ## Running the website (using docker-compose)
 - Create a ```.env``` file, to supply credentials as environemnt variables to the PHP app and database 
 ```
@@ -37,23 +40,25 @@ $ docker-compose up --build
 
 ## The app (in pictures - docker compose)
 
-<img width="1009" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/baa1ca77-eb32-40b5-9a27-ceba38993c6b">
+<img width="376" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/86e15300-65f6-4d55-ad60-456a548c7158">
 
-App - *[http:ocalhost:8080/index.html](http:ocalhost:8080/index.html)*
+App - *[http:localhost:8080/index.html](http:localhost:8080/index.html)*
 
-<img width="920" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/93b7c82d-1557-4a44-8ef3-ec06bb9ae2ca">
+<img width="650" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/09ba0539-ec38-4b2f-9822-758e86fb5816">
 
 *redirection*
 
-<img width="1150" alt="Screenshot 2023-07-23 at 17 07 08" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/7d8c7aa7-00af-402c-8a69-9576b75ea37c">
+<img width="650" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/fc3a7aa3-0316-4bc1-a484-c4e4006b93ce">
 
-<img width="1097" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/0c53c8c7-4239-42ba-bf52-632a4c9b7d15">
+Database Visualization - *[http:localhost:80](http:localhost:80)*
 
-Database Visualization - *[http:ocalhost:80](http:ocalhost:80)*
+Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)
 
-Grafa Dashboard - *[http:ocalhost:3000/](http:ocalhost:3000/)
+<img width="560" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/65a4b114-83a6-4a23-a341-c5d590e4fcde">
 
-<img width="1454" alt="Screenshot 2023-08-02 at 10 20 32" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/f934f778-f403-40ed-84c3-3c13ca1595a6">
+Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)
+
+<img width="837" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/114ddb06-e5dc-4795-9775-63902d15f70d">
 
 ## Running website (without docker-compose)
 **Note**: Ensure the value of ```$host```in ```index.php``` file, tallies with the value of <mysql-container-name> 
@@ -112,17 +117,23 @@ $ docker run -d --network <network-name> --name <grafana-container-name> -p 3000
 ```
 
 ## The app (in pictures - without docker compose)
-<img width="588" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a7ac4344-a196-4005-93d6-eb56c52f3335">
+App - *[http:localhost:8080/index.html](http:localhost:8080/index.html)*
 
-App - *[http:ocalhost:8080/index.html](http:ocalhost:8080/index.html)*
-
-<img width="1521" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/a06a570a-1c36-47b6-ba66-1c2033c289b9">
+<img width="650" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/09ba0539-ec38-4b2f-9822-758e86fb5816">
 
 *redirection*
 
-<img width="1521" alt="image" src="https:ithub.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/c20db017-e859-48fc-8b47-5da739e7cc7f">
+<img width="650" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/fc3a7aa3-0316-4bc1-a484-c4e4006b93ce">
 
-Database Visualization - *[http:ocalhost:80](http:ocalhost:80)*
+Database Visualization - *[http:localhost:80](http:localhost:80)*
+
+Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)
+
+<img width="560" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/65a4b114-83a6-4a23-a341-c5d590e4fcde">
+
+Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)
+
+<img width="837" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/114ddb06-e5dc-4795-9775-63902d15f70d">
 
 ## Push Php Image to DockerHub
 ```bash

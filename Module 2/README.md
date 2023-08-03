@@ -52,11 +52,11 @@ App - *[http:localhost:8080/index.html](http:localhost:8080/index.html)*
 
 Database Visualization - *[http:localhost:80](http:localhost:80)*
 
-Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)
+Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)*
 
 <img width="560" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/65a4b114-83a6-4a23-a341-c5d590e4fcde">
 
-Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)
+Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)*
 
 <img width="837" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/114ddb06-e5dc-4795-9775-63902d15f70d">
 
@@ -127,11 +127,11 @@ App - *[http:localhost:8080/index.html](http:localhost:8080/index.html)*
 
 Database Visualization - *[http:localhost:80](http:localhost:80)*
 
-Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)
+Grafa Dashboard - *[http:localhost:3000/](http:localhost:3000/)*
 
 <img width="560" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/65a4b114-83a6-4a23-a341-c5d590e4fcde">
 
-Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)
+Prometheus Targets - *[http:localhost:9090/](http:localhost:9090/)*
 
 <img width="837" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/114ddb06-e5dc-4795-9775-63902d15f70d">
 

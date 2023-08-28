@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: form-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: form
+  template:
+    metadata:
+      labels:
+        app: form
+    spec:
+      containers:
+        - name: form
+          image: mbaoma/my-php:v2 
+          ports:
+            - containerPort: 8080 
+          env:
+            - name: DB_HOST
+              value: mysql-service 
+
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: MYSQL_PASSWORD
+
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: MYSQL_ROOT_PASSWORD
+
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: MYSQL_DATABASE
+                  
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: MYSQL_USER

@@ -1,6 +1,6 @@
 This folder contains my configuration for deploying the form in [Module-2](https://github.com/DeimosCloud/mary-sre-internship-2023/tree/main/Module%202), to Kubernetes.
 
-## Steps
+## Deploy on local Kubernetes (Docker Desktop)
 - Create secrets (ideally values you would put in a ```.env``` file)
 ```
 kubectl create secret generic mysql-secrets \
@@ -20,8 +20,6 @@ $ kubectl apply -f php-my-admin
 $ kubectl apply -f web-app
 ```
 
-**You can run these commands in a Google Cloud CLI, to dpeloy the app to GKE**
-
 <img width="1328" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/f27da203-d4f0-468a-a9de-e4b94146ba91">
 *web-app-before-filling-data*
 
@@ -33,3 +31,24 @@ $ kubectl apply -f web-app
 
 <img width="1328" alt="image" src="https://github.com/DeimosCloud/mary-sre-internship-2023/assets/49791498/01703883-348f-4e8a-a406-179ff633db8e">
 *php-my-admin*
+
+## Deploy to Google Kubernetes Engine (GKE)
+- Create a Cloud Shell
+- Create a project
+- Create a cluster
+```
+$ gcloud container clusters create-auto php-web-app \
+    --location=us-west1
+```
+- Get authentication credentials for the cluster
+```
+$ gcloud container clusters get-credentials php-web-app \
+    --location=us-west1
+```
+- Apply configuration
+```
+$ kubectl apply -f mysql-database
+$ kubectl apply -f php-my-admin
+$ kubectl apply -f web-app
+$ kubectl apply -f ingress.yaml
+```

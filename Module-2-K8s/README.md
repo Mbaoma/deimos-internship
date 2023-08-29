@@ -40,11 +40,23 @@ $ kubectl apply -f web-app
 $ gcloud container clusters create-auto php-web-app \
     --location=us-west1
 ```
+
 - Get authentication credentials for the cluster
 ```
 $ gcloud container clusters get-credentials php-web-app \
     --location=us-west1
 ```
+
+- Create secrets (ideally values you would put in a ```.env``` file)
+```
+kubectl create secret generic mysql-secrets \
+--from-literal=MYSQL_ROOT_PASSWORD=<value> \
+--from-literal=MYSQL_PASSWORD=<value>\
+--from-literal=MYSQL_DATABASE=<value> \
+--from-literal=MYSQL_PORT=3306 \
+--from-literal=MYSQL_USER=<value>
+```
+
 - Apply configuration
 ```
 $ kubectl apply -f mysql-database

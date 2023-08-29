@@ -6,8 +6,7 @@ metadata:
     name: form-ingress
 spec:
   rules:
-    - host: localhost
-      http:
+    - http:
         paths:
           - pathType: Prefix
             path: "/"
@@ -15,4 +14,4 @@ spec:
               service:
                 name: form-service
                 port:
-                  number: 8080
+                  number: 80

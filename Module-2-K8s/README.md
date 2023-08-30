@@ -11,12 +11,6 @@ kubectl create secret generic mysql-secrets \
 --from-literal=MYSQL_USER=<value>
 ```
 
-- Edit your spec, to be a loadbalancer (for web pages) or ClusterIP for databases
-```
-spec:
-  type: LoadBalancer
-```
-
 - Setup [Ingress](https://kubernetes.github.io/ingress-nginx/deploy/)
 
 - Apply configuration
@@ -61,6 +55,12 @@ kubectl create secret generic mysql-secrets \
 --from-literal=MYSQL_DATABASE=<value> \
 --from-literal=MYSQL_PORT=3306 \
 --from-literal=MYSQL_USER=<value>
+```
+
+- Edit your spec, to be a loadbalancer (for web pages) or ClusterIP for databases
+```
+spec:
+  type: LoadBalancer
 ```
 
 - Apply configuration

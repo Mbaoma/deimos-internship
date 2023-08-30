@@ -70,3 +70,17 @@ $ kubectl apply -f php-my-admin
 $ kubectl apply -f web-app
 $ kubectl apply -f ingress.yaml
 ```
+
+<img width="1347" alt="image" src="https://github.com/Mbaoma/deimos-internship/assets/49791498/2c84327c-f030-4fe6-b920-236d9232cf83">
+
+<img width="1347" alt="image" src="https://github.com/Mbaoma/deimos-internship/assets/49791498/d40476c5-bbb5-4e29-aef2-31688d95f05f">
+
+<img width="1347" alt="image" src="https://github.com/Mbaoma/deimos-internship/assets/49791498/4cd6e9a9-5c70-45ba-beb5-2d89c3b245ba">
+
+*web-app* [Link](http://34.121.31.227/index.html)
+
+<img width="1347" alt="image" src="https://github.com/Mbaoma/deimos-internship/assets/49791498/6921a3d2-d63d-448f-b9c3-304bdfb530ab">
+
+<img width="1347" alt="image" src="https://github.com/Mbaoma/deimos-internship/assets/49791498/0e802bbd-0fc5-40e6-9b5f-3faf2ae3ca4d">
+
+*phpmyAdmin*

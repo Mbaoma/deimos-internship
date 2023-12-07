@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: php-my-admin-service
 spec:
-  type: NodePort
+  type: ClusterIP
+  # type: NodePort
   selector:
     app: php-my-admin  
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 81
+      targetPort: 3000
+      # port: 80
+      # targetPort: 80

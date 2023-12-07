@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: form
-          image: mbaoma/my-php:v2 
+          image: gcr.io/kubernetes-work-396809/form1
+          # image: mbaoma/my-php:v2 
           ports:
             - containerPort: 8080 
           env:

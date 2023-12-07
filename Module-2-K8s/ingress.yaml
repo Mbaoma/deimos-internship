@@ -6,13 +6,27 @@ metadata:
     name: form-ingress
 spec:
   rules:
-    - host: localhost
-      http:
+    # - host: localhost
+    - http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: "/index.html"
             backend:
               service:
                 name: form-service
                 port:
                   number: 8080
+          
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: php-my-admin-service
+                port:
+                  number: 3000
+ 
+
+
+                  
+
+                 

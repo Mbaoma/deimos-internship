@@ -10,3 +10,18 @@ scrape_configs:
   - job_name: 'mysqld_exporter'
     static_configs:
       - targets: ['mysqld_exporter:9104']
+  
+  - job_name: 'blackbox'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Use the module defined in blackbox.yml
+    static_configs:
+      - targets: 
+        - http://web:80/index.html  # Replace with your PHP API endpoint
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115  # Blackbox Exporter container

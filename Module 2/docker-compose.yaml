@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 services:
   web:
       build: 
@@ -15,7 +15,8 @@ services:
 
   db:
     image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
+    # command: --default-authentication-plugin=caching_sha2_password
+    # command: --default-authentication-plugin=mysql_native_password
     restart: always
     env_file:
       - .env
@@ -65,11 +66,25 @@ services:
         - "--collect.perf_schema.eventswaits"
         - "--collect.perf_schema.indexiowaits"
         - "--collect.perf_schema.tableiowaits"
+        - "--collect.slave_status"
+        - "--collect.perf_schema.memory_events"
+        - "--collect.perf_schema.replication_group_member_stats"
+        - "--collect.heartbeat"
       ports:
         - 9104:9104
       volumes:
         - ./.my.cnf:/.my.cnf
+        - ./.my.cnf:/etc/my.cnf
 
+  blackbox_exporter:
+    image: prom/blackbox-exporter:latest
+    ports:
+      - "9115:9115"
+    volumes:
+      - ./blackbox.yml:/etc/blackbox_exporter/config.yml  # Configuration file for blackbox exporter
+    command:
+      - '--config.file=/etc/blackbox_exporter/config.yml'
+      
   prometheus:
     image: prom/prometheus
     depends_on:
